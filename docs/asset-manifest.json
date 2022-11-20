@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/static/js/main.d5f6e0ba.js",
-    "index.html": "/index.html",
-    "main.d5f6e0ba.js.map": "/static/js/main.d5f6e0ba.js.map"
+    "main.js": "/sonastorte/static/js/main.d5f6e0ba.js",
+    "index.html": "/sonastorte/index.html",
+    "main.d5f6e0ba.js.map": "/sonastorte/static/js/main.d5f6e0ba.js.map"
   },
   "entrypoints": [
     "static/js/main.d5f6e0ba.js"
