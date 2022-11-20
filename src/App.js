@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      <h1>Sonas Torte</h1>
+      <h1>Sonas Torte v2</h1>
     </div>
   );
 }
