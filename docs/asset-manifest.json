@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.js": "/sonastorte/static/js/main.8c808821.js",
-    "index.html": "/sonastorte/index.html",
-    "main.8c808821.js.map": "/sonastorte/static/js/main.8c808821.js.map"
+    "main.js": "/static/js/main.906f42c4.js",
+    "static/media/sona.jpg": "/static/media/sona.a3837c74102092ee0b35.jpg",
+    "index.html": "/index.html",
+    "main.906f42c4.js.map": "/static/js/main.906f42c4.js.map"
   },
   "entrypoints": [
-    "static/js/main.8c808821.js"
+    "static/js/main.906f42c4.js"
   ]
 }
