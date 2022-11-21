@@ -1,17 +1,43 @@
-import sona from './sona.jpg'
-import logo from './logo.png'
+import Footer from './Footer'
 
+const fillings = {
+  name: "Начинки",
+  items: [
+    'клюква',
+    'малина',
+    'клубника'
+    ]
+}
+
+const fillings2 = {
+  name: "Начинки 2",
+  items: [
+    'клюква 1',
+    'малина 1',
+    'клубника 1'
+    ]
+}
+
+const ingredients = [fillings, fillings2]
+
+function Ingredients(data) {
+  return (
+    <>
+      <h1>{data.name}</h1>
+      <ul>
+        {data.items.map(filling => (<li>{filling}</li>))}
+      </ul>
+    </>
+  )
+}
 
 function App() {
   return (
     <div>
-      <img alt="Logo" width={300} src={logo}/>
-      <br/>
-      <br/>
-      <br/>
-      <img alt="Sona" width={200} src={sona}/>
+      {ingredients.map(ingredient => Ingredients(ingredient))}
+      {Footer()}
     </div>
-  );
+  )
 }
 
 export default App;
