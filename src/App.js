@@ -1,43 +1,51 @@
-import Footer from './Footer'
+import { useState } from 'react'
 
 const fillings = {
-  name: "Начинки",
-  items: [
-    'клюква',
-    'малина',
-    'клубника'
+    name: "Начинки",
+    items: [
+        'клюква',
+        'малина',
+        'клубника'
     ]
 }
 
 const fillings2 = {
-  name: "Начинки 2",
-  items: [
-    'клюква 1',
-    'малина 1',
-    'клубника 1'
+    name: "Начинки 2",
+    items: [
+        'клюква 1',
+        'малина 1',
+        'клубника 1'
     ]
 }
 
 const ingredients = [fillings, fillings2]
 
-function Ingredients(data) {
-  return (
-    <>
-      <h1>{data.name}</h1>
-      <ul>
-        {data.items.map(filling => (<li>{filling}</li>))}
-      </ul>
-    </>
-  )
+function Ingredients(data, ingredientChosen) {
+    return (
+        <>
+            <h1>{data.name}</h1>
+            {
+                data.items.map(filling => (
+                    <button onClick={() => ingredientChosen(filling)}>{filling}</button>
+                ))
+            }
+        </>
+    )
 }
 
 function App() {
-  return (
-    <div>
-      {ingredients.map(ingredient => Ingredients(ingredient))}
-      {Footer()}
-    </div>
-  )
+    const [chosenIngredient, setChosenIngredient] = useState('')
+
+    function ingredientChosen(ingredient) {
+        setChosenIngredient(ingredient)
+    }
+
+    return (
+        <div>
+            {Ingredients(ingredients[0], ingredientChosen)}
+            <p>Выбранный ингредиент: {chosenIngredient}</p>
+        </div >
+    )
 }
 
 export default App;
