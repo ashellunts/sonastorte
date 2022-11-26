@@ -1,10 +1,11 @@
+import React from 'react';
 import logo from './logo.png'
 
 function Footer() {
     return (
-      <div>
-        <img alt="Logo" width={300} src={logo}/>
-      </div>
+        <div>
+            <img alt="Logo" width={300} src={logo} />
+        </div>
     )
 }
 
