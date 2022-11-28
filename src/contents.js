@@ -8,7 +8,7 @@ function contents(page, chosenIngredients, name, setName, next, setChosenIngredi
         <div>
             {ChosenIngredientsView(chosenIngredients)}
             {PageView(page, name, setName, next, chosenIngredients, setChosenIngredient)}
-            {BackButton(page, back)}
+            <BackButton back={back} page={page}/>
         </div>
     )
 }
@@ -34,7 +34,7 @@ function PageView(page, name, setName, next, chosenIngredients, setChosenIngredi
     return pageContents;
 }
 
-function BackButton(page, back) {
+function BackButton({page, back}) {
     let backButton = null;
     if (page.name !== pages.ingredients || page.index !== 0) {
         backButton = (<button onClick={() => { back(); }}>назад</button>);

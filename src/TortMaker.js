@@ -3,7 +3,7 @@ import contents from './contents';
 import ingredients from './ingredients';
 import pages from './ingredientsPage';
 
-function App() {
+function TortMaker() {
     const [chosenIngredients, setChosenIngredients] = useState([])
     const [name, setName] = useState('')
     const [page, setPage] = useState({ name: pages.ingredients, index: 0 })
@@ -61,4 +61,4 @@ function App() {
     return contents(page, chosenIngredients, name, setName, next, setChosenIngredient, back)
 }
 
-export default App
+export default TortMaker
