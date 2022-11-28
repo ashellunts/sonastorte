@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import DecorExplorer from './DecorExplorer';
+import DecorExplorer from './DecorExplorer/DecorExplorer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
