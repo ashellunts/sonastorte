@@ -6,14 +6,15 @@ import pages from './ingredientsPage';
 function contents(page, chosenIngredients, name, setName, next, setChosenIngredient, back) {
     return (
         <div>
-            {ChosenIngredientsView(chosenIngredients)}
-            {PageView(page, name, setName, next, chosenIngredients, setChosenIngredient)}
+            <ChosenIngredientsView chosenIngredients={chosenIngredients} />
+            <PageView data={{page, name, setName, next, chosenIngredients, setChosenIngredient}} />
             <BackButton back={back} page={page}/>
         </div>
     )
 }
 
-function PageView(page, name, setName, next, chosenIngredients, setChosenIngredient) {
+function PageView({data}) {
+    const {page, name, setName, next, chosenIngredients, setChosenIngredient} = data
     let pageContents = null;
     switch (page.name) {
         case pages.customerName:
@@ -42,7 +43,7 @@ function BackButton({page, back}) {
     return backButton;
 }
 
-function ChosenIngredientsView(chosenIngredients) {
+function ChosenIngredientsView({chosenIngredients}) {
     return <div>
         <b> Выбранные игредиенты </b>
         {ingredients
