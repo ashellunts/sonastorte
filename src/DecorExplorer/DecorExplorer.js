@@ -1,25 +1,6 @@
 import React from 'react';
 
-const decorsList = [
-    {
-        name: "русалка",
-        tags: ["tag1", "tag2"]
-    },
-    {
-        name: "машинки",
-        tags: ["tag1"]
-    },
-    {
-        name: "футбол",
-        tags: ["tag1"]
-    },
-    {
-        name: "дисней",
-        tags: ["tag1"]
-    }
-]
-
-function DecorsExplorer() {
+function DecorsExplorer({ decorsList }) {
     return (
         <div>
             {decorsList.map((decor, index) => (
