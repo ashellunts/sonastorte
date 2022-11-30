@@ -5,19 +5,19 @@ import DecorExplorer from './DecorExplorer/DecorExplorer';
 const decorsList = [
   {
     name: "русалка",
-    tags: ["tag1", "tag2"]
+    tags: ["девочка"]
   },
   {
     name: "машинки",
-    tags: ["tag1"]
+    tags: ["мальчик"]
   },
   {
     name: "футбол",
-    tags: ["tag1"]
+    tags: ["мальчик"]
   },
   {
     name: "дисней",
-    tags: ["tag1"]
+    tags: ["девочка"]
   }
 ]
 
