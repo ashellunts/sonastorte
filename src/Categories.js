@@ -1,63 +1,81 @@
 import React, { useState } from 'react';
+import DecorExplorer from './DecorExplorer/DecorExplorer'
 
 const boys = {
+    name: 'boys',
     parent: null,
-    items: [
+    subcategories: [
         {
             name: 'cars',
-            subCategories: {
-                parent: null,
-                items: []
-            }
+            parent: null,
+            subcategories: []
         },
         {
             name: 'spider man',
-            subCategories: {
-                parent: null,
-                items: []
-            }
+            parent: null,
+            subcategories: []
         }
     ]
 };
 
-boys.items[0].subCategories.parent = boys;
-boys.items[1].subCategories.parent = boys;
+boys.subcategories[0].parent = boys;
+boys.subcategories[1].parent = boys;
+
+const decorsList = [
+  {
+    name: "русалка",
+    tags: ["девочка"]
+  },
+  {
+    name: "машинки",
+    tags: ["мальчик"]
+  },
+  {
+    name: "футбол",
+    tags: ["мальчик"]
+  },
+  {
+    name: "дисней",
+    tags: ["девочка"]
+  }
+]
 
 const root = {
+    name: "root",
     parent: null,
-    items: [
-        {
-            name: 'boys',
-            subCategories: boys
-        },
+    subcategories: [
+        boys,
         {
             name: 'girls',
-            subCategories: {
-                parent: null,
-                items: []
-            }
+            parent: null,
+            decorsList: decorsList
         }
     ]
 };
 
-root.items[1].subCategories.parent = root;
-
-root.parent = root;
+root.subcategories[1].parent = root;
 boys.parent = root;
 
 function Categories() {
     const [current, setCurrent] = useState(root);
 
+    let backButton = null;
+    if (current.parent !== null)
+        backButton = <button onClick={() => setCurrent(current.parent)}>go back</button>;
+
+    let subCategories = null;
+    if (current.subcategories !== undefined)
+        subCategories = current.subcategories.map((category, i) => (
+            <div key={i}>
+                <button onClick={() => setCurrent(category)}>{category.name}</button>
+            </div>
+        ));
+
     return (
         <div>
-            {current.items.map((category, i) => (
-                <div key={i}>
-                    <button onClick={() => setCurrent(category.subCategories)} >{category.name}</button>
-                </div>))
-            }
-            <br />
-            <br />
-            <button onClick={() => setCurrent(current.parent)}>go back</button>
+            {subCategories}
+            {backButton}
+            <DecorExplorer decorsList={current.decorsList} />
         </div >
     );
 }

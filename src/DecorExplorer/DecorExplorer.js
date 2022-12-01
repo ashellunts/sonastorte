@@ -3,6 +3,10 @@ import { useState } from 'react';
 import Decor from './Decor';
 
 function DecorsExplorer({ decorsList }) {
+
+    if (decorsList === undefined)
+        return null;
+
     const [selectedTag, setSelectedTag] = useState('')
 
     const filtered = decorsList.filter(decor => selectedTag.length == 0 || decor.tags.includes(selectedTag))
