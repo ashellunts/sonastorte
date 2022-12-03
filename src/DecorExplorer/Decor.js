@@ -4,6 +4,8 @@ function Decor({ data }) {
     return (
         <div className='decor'>
             <b>{data.name}</b>
+            <br/>
+            <img width={200} src={data.img} />
             <Tags tagList={data.tags} />
             <br />
         </div>
